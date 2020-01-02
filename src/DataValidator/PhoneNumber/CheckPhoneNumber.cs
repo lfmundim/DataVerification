@@ -12,7 +12,7 @@ namespace DataValidator.PhoneNumber
         public CheckPhoneNumber()
         {
             //https://regex101.com/r/U4hWBx/5
-            PhoneRegex = new Regex(@"(((?<CountryState>\+\d\d\(?0?\d\d\)?)|(?<State>(\()?0?\d\d(\))?))?(?<Phone>(\d){9,}))");
+            PhoneRegex = new Regex(@"(((?<CountryState>\+\d\d\(?0?\d\d\)?)|(?<State>(\()?0?\d\d(\))?))?(?<Phone>(\d){8,}))");
         }
 
         /// <summary>

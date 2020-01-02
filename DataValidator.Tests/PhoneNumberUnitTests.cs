@@ -20,9 +20,11 @@ namespace DataValidator.Tests
         [InlineData("me chama no zap 986619392", true, "", "986619392", "986619392")]
         [InlineData("me chama no zap 31986619392 vlw", true, "31", "986619392", "31986619392")]
         [InlineData("me chama no zap 031986619392 vlw", true, "031", "986619392", "031986619392")]
-        [InlineData("me chama no zap 86619392 vlw", false, "", "", "")]
-        [InlineData("me chama no zap 8661-9392 vlw", false, "", "", "")]
+        [InlineData("me chama no 86619392 vlw", true, "", "86619392", "86619392")]
+        [InlineData("me chama no 8661-9392 vlw", true, "", "86619392", "86619392")]
         [InlineData("me chama no zap vlw", false, "", "", "")]
+        [InlineData("Meu telefone fixo é (031) 3221-3344", true, "031", "32213344", "03132213344")]
+        [InlineData("03132213344", true, "031", "32213344", "03132213344")]
         public void ExtractAndValidatePhoneNumber(string text, bool isValid, string expectedRegionCode, string expectedNumber, string expectedFullNumber)
         {
             // Arrange
