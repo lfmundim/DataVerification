@@ -29,6 +29,7 @@ namespace DataValidator.Tests
         [InlineData("meu cnpj é 40.015.389/0001-63", true, "40015389000163", "40.015.389/0001-63")]
         [InlineData("CPF: 40.015.389/0001-63", true, "40015389000163", "40.015.389/0001-63")]
         [InlineData("oi boa noite meu cpf eh 40.015.389/0001-63", true, "40015389000163", "40.015.389/0001-63")]
+        [InlineData("3519080035621300", false, "3519080035621300", "35.190.800/3562-13")]
         public void ExtractAndCheckCnpj_ShouldReturnCheckCnpj(string text, bool expectedResult, string expectedCnpj, string expectedFormatted)
         {
             // Arrange

@@ -50,7 +50,7 @@ namespace DataValidator.Cnpj
             verifier[1] = remainder < 2 ? 0 : (11 - remainder);
             var verifierDigits = verifier[0].ToString() + verifier[1].ToString();
 
-            return cnpj.EndsWith(verifierDigits);
+            return new string(cnpj.Take(14).ToArray()).EndsWith(verifierDigits);
         }
 
         /// <summary>
